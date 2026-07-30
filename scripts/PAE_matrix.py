@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load data
-with open("darpin_af3_summary.json", "r") as f:
+with open("data/darpin_af3_summary.json", "r") as f:
     data = json.load(f)
 
 pae_raw = data.get("pae", data.get("predicted_aligned_error", None))
