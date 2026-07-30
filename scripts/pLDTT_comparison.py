@@ -21,8 +21,8 @@ def get_plddt_scores(pdb_path, chain_id="B"):
     return res_ids, scores
 
 # 1. Extract scores for both models
-res_af3, plddt_af3 = get_plddt_scores("C:/Users/abdul/Downloads/fold_2026_07_28_22_01_model_0.pdb", chain_id="B")
-res_boltz, plddt_boltz = get_plddt_scores("C:/Users/abdul/Downloads/mutated_3_fc_model_0.pdb", chain_id="B")
+res_af3, plddt_af3 = get_plddt_scores("structures/darpin_af3_seed5.pdb", chain_id="B")
+res_boltz, plddt_boltz = get_plddt_scores("structures/darpin_boltz1.pdb", chain_id="B")
 
 # 2. Plot comparison
 fig, ax = plt.subplots(figsize=(8, 4), dpi=300)
@@ -43,7 +43,7 @@ ax.set_ylabel("pLDDT Score", fontsize=10)
 ax.legend(loc="lower left", fontsize=8)
 
 plt.tight_layout()
-plt.savefig("C:/Users/abdul/Desktop/b-public_images/Figure4B_pLDDT_Comparison.png", dpi=300, bbox_inches="tight")
+plt.savefig("Figure4B_pLDDT_Comparison.png", dpi=300, bbox_inches="tight")
 plt.close(fig)
 
 print("Saved dual-model pLDDT plot successfully!")
